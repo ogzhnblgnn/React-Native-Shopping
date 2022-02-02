@@ -9,12 +9,10 @@ const App = () => {
   const renderItems = ({item}) => <ProductCard item={item} />;
   const [products, setProducts] = useState(data);
 
-  const handleSearch = text => {
+  const quickSearch = text => {
     const filteredList = data.filter(product => {
       const searchedText = text.toLowerCase();
       const currentTitle = product.title.toLowerCase();
-
-      //searchedText currentTitle ın içinde varsa yani değeri -1 den büyükse döndürür
       return currentTitle.indexOf(searchedText) > -1;
     });
     setProducts(filteredList);
@@ -23,7 +21,7 @@ const App = () => {
   return (
     <SafeAreaView style={styles.conatiner}>
       <Text style={styles.title}>OZZYSTORE</Text>
-      <SearchBar onChange={handleSearch} />
+      <SearchBar onChange={quickSearch} />
       <FlatList data={products} renderItem={renderItems} numColumns={2} />
     </SafeAreaView>
   );
