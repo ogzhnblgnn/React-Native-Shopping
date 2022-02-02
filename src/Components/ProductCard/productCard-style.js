@@ -2,7 +2,7 @@ import {StyleSheet, Dimensions} from 'react-native';
 
 export default StyleSheet.create({
   container: {
-    backgroundColor: '#dbdbdb',
+    backgroundColor: '#eceff1',
     width: Dimensions.get('window').width / 2.1,
     margin: 5,
     borderRadius: 10,
